@@ -1,0 +1,17 @@
+
+<%- include("partials/header"); -%>
+    <h1>Register</h1>
+    <form class="" action="/register" method="post">
+      <div class="form-group">
+        <label>Name</label>
+        <input class="form-control" type="text" name="name">
+        <label>Email</label>
+        <input class="form-control" type="email" name="email">
+        <label>Password</label>
+        <input class="form-control" type="password" name="password">
+      </div>
+      <div><p>Already had an account?<a href="/signin">Sign In</a></p></div>
+      <button class="btn btn-primary" type="submit" name="button">Sign Up</button>
+    </form>
+
+<%- include("partials/footer"); -%>
