@@ -4,6 +4,7 @@ const colors = require('colors')
 const ejs = require('ejs')
 const bodyParser = require('body-parser')
 const path = require('path')
+const blogs = require('./blogs')
 
 dotenv.config()
 
@@ -21,7 +22,7 @@ app.use('/', express.static(path.join(__dirname, 'public'), {maxAge: 10000}))
 
 
 app.get('/', (req, res) => {
-    res.render('home')
+    res.render('home', {blogs: blogs})
 })
 
 const PORT = process.env.PORT || 5000
