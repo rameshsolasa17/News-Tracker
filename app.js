@@ -33,6 +33,21 @@ app.get('/blogs/:id', (req, res) => {
     res.render('blog', {blog: blog[0]})
 })
 
+//compose 
+app.get('/compose', (req, res) => {
+    res.render('compose')
+})
+
+//register
+app.get('/register', (req, res) => {
+    res.render('register')
+})
+
+//signin
+app.get('/signin', (req, res) => {
+    res.render('signin')
+})
+
 const PORT = process.env.PORT || 5000
 
 app.listen(PORT, () => {
