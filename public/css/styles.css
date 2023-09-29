@@ -1,3 +1,11 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 50px;
+}
 .navbar {
     padding: 1% 0 1% 0;
     background-color: #045DE9 !important;
@@ -28,7 +36,9 @@
     font-weight: 700;
 }
 
+
 .footer {
+    position: absolute;
 	text-align: center;
 	bottom: 0;
 	width: 100%;
@@ -47,6 +57,8 @@
     border-radius:15px;
     margin-top: -45px;
     margin-bottom: -35px;
+    margin-left: 35px;
+    margin-right: 35px;
     padding-top: 10px;
     padding-bottom: 10px;
 }
@@ -57,7 +69,8 @@
     display: grid;
     height: 100%;
 }
-@media only screen and (min-width: 900px) {
+
+@media only screen and (min-width: 800px) {
     .homeImage {
         margin-top: 25px;
         height: 125px;
@@ -72,11 +85,16 @@
     padding: 20px;
 }
   
-.container {
-      padding-top: 60px;
-      padding-bottom: 40px;
+.box {
+    padding-top: 60px;
+    padding-bottom: 40px;
 }
 
 a {
     text-decoration: none;
+}
+
+h3 {
+    padding-top: 10px;
+    color: #045DE9;
 }

@@ -20,9 +20,17 @@ app.use(bodyParser.urlencoded({extended:true}))
 //Static files
 app.use('/', express.static(path.join(__dirname, 'public'), {maxAge: 10000}))
 
-
+//all Blogs
 app.get('/', (req, res) => {
     res.render('home', {blogs: blogs})
+})
+
+//one blog
+app.get('/blogs/:id', (req, res) => {
+    const id = req.params.id
+    const blog = blogs.filter((blog) => blog._id == id)
+    //res.json(blog[0])
+    res.render('blog', {blog: blog[0]})
 })
 
 const PORT = process.env.PORT || 5000
