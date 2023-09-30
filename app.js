@@ -5,8 +5,14 @@ const ejs = require('ejs')
 const bodyParser = require('body-parser')
 const path = require('path')
 const blogs = require('./blogs')
+const connectDB = require('./config/db')
+const Blog = require('./models/blogModel')
+const blogRoutes = require('./routes/blogRoutes')
 
 dotenv.config()
+
+//data base
+connectDB()
 
 const app = express()
 
@@ -16,27 +22,13 @@ app.set('views', path.join(__dirname, 'views'))
 
 //Body Parser Setup
 app.use(bodyParser.urlencoded({extended:true}))
+app.use(express.json())
 
 //Static files
 app.use('/', express.static(path.join(__dirname, 'public'), {maxAge: 10000}))
 
-//all Blogs
-app.get('/', (req, res) => {
-    res.render('home', {blogs: blogs})
-})
-
-//one blog
-app.get('/blogs/:id', (req, res) => {
-    const id = req.params.id
-    const blog = blogs.filter((blog) => blog._id == id)
-    //res.json(blog[0])
-    res.render('blog', {blog: blog[0]})
-})
-
-//compose 
-app.get('/compose', (req, res) => {
-    res.render('compose')
-})
+//Routes
+app.use('/', blogRoutes)
 
 //register
 app.get('/register', (req, res) => {

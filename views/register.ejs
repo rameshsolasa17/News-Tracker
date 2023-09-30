@@ -6,13 +6,13 @@
         <form class="" action="/register" method="post">
         <div class="form-group">
             <label>Name</label>
-            <input class="form-control" type="text" name="name" placeholder="Enter Name" value="<%=typeof name != 'undefined'?name:''%>">
+            <input class="form-control" type="text" name="name" value="<%=typeof name != 'undefined'?name:''%>">
             <label>Email</label>
-            <input class="form-control" type="email" name="email" placeholder="Enter Email" value="<%=typeof email != 'undefined'?email:''%>">
+            <input class="form-control" type="email" name="email" value="<%=typeof email != 'undefined'?email:''%>">
             <label>Password</label>
-            <input class="form-control" type="password" name="password" placeholder="Enter Password" value="<%=typeof password != 'undefined'?password:''%>">
+            <input class="form-control" type="password" name="password" value="<%=typeof password != 'undefined'?password:''%>">
             <label>Confirm Password</label>
-            <input class="form-control" type="password" name="password2" placeholder="Confirm Password" value="<%=typeof password2 != 'undefined'?password2:''%>">
+            <input class="form-control" type="password" name="password2" value="<%=typeof password2 != 'undefined'?password2:''%>">
         </div>
         <div><p>Already had an account?<a href="/signin">Sign In</a></p></div>
         <button class="btn btn-primary" type="submit" name="button">Sign Up</button>
