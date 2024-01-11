@@ -7,20 +7,20 @@ body {
     margin-bottom: 50px;
 }
 .navbar {
-    padding: 1% 0 1% 0;
+    padding: 2% 0 2% 0;
     background-color: #045DE9 !important;
 }
 
 .navbar-brand {
     color: #F5F5F5;
     font-weight: 400;
-    font-size: large;
+    font-size: 22px;
     margin-left: 10px;
 }
 
 .nav-item {
     font-weight: 100;
-    font-size: small;
+    font-size: 15px;
     margin-left: 10px;
 }
 
@@ -53,7 +53,7 @@ body {
 }
 
 .row {
-    background-color: #F2F2F2;
+    background-color: #F9F9F9;
     border-radius:15px;
     margin-top: -45px;
     margin-bottom: -35px;
@@ -101,4 +101,14 @@ a {
 h3 {
     padding-top: 10px;
     color: #045DE9;
+}
+
+.comment {
+    text-align: justify;
+    padding-bottom: 10px;
+}
+
+
+.form_1 {
+    width: 400px
 }

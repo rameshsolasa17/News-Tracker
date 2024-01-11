@@ -6,6 +6,24 @@
         <h3><%=blog.title%></h3>
         <div class="imgbox"><img src="<%=blog.image%>" class="postImage"/></div>
         <p style="text-align: justify;"><%=blog.content%></p>
+        <form class="" action="/blogs/<%=blog.id%>/comments" method="post" enctype="application/x-www-form-urlencoded">
+            <div class="form-group">
+                <label>Comment</label>
+                <textarea class="form-control" name="comment" rows="2" cols="30"></textarea>
+            </div>
+            <button class="btn btn-primary" type="submit" name="button" style="margin: 10px 0 10px 0;">comment</button>
+        </form>
+        <%  blog.comments.forEach((comment) => { %>
+
+            <div class="container-fluid comment">
+              <div class="">
+                <div class="content col-md-10">
+                  <p><%=comment.comment%></p>
+                </div>
+              </div>
+            </div>
+        
+        <% }) %>
     </div>
 
 

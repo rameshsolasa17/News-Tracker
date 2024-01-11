@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
-const {getBlogs, getBlogById, getComposePage, deleteBlog, createBlog} = require('../controllers/blogController')
+const {getBlogs, getBlogById, getComposePage, deleteBlog, createBlog, createBlogComment} = require('../controllers/blogController')
+// const {ensureAuthenticated} = require('../config/auth')
 
 
 
@@ -36,5 +37,8 @@ const upload=multer({
 
 router.route('/').get(getBlogs)
 router.route('/blogs/:id').get(getBlogById)
-router.route('/compose').get(getComposePage).post(upload.single('image'), createBlog)
+router.route('/blogs/:id/comments').post(createBlogComment)
+router.route('/compose').get( getComposePage).post(upload.single('image'), createBlog)
+
+
 module.exports = router

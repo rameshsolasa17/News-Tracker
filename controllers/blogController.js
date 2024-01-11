@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
 const Blog = require('../models/blogModel')
-const path = require('path')
+const path = require('path');
+const User = require('../models/userModel');
 
 const getBlogs = async (req, res) => {
     const blogs = await Blog.find() 
@@ -36,7 +37,19 @@ const createBlog = async (req, res) => {
     res.redirect(`/blogs/${createdBlog._id}`)
 }
 
+const createBlogComment = async (req, res) => {
+    const {comment} = req.body
+    const blog = await Blog.findById(req.params.id)
 
+    const newComment = {
+        comment,
+    }
+    blog.comments.push(newComment)
+
+    await blog.save()
+
+    res.redirect(`/blogs/${req.params.id}`)
+}
 
 
 //miscellaneous
@@ -49,7 +62,8 @@ module.exports = {
     getBlogById,
     getComposePage,
     createBlog,
-    deleteBlog
+    deleteBlog,
+    createBlogComment
 }
 
 
