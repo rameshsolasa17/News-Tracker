@@ -59,8 +59,12 @@ app.use(express.json())
 app.use('/', express.static(path.join(__dirname, 'public'), {maxAge: 10000}))
 
 //Routes
-app.use('/', blogRoutes)
+app.use('/blogs', blogRoutes)
 app.use('/users/', userRoutes)
+
+app.get('/', (req, res) => {
+    res.send('all Blogs');
+}
 
 const PORT = process.env.PORT || 5000
 
