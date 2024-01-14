@@ -6,9 +6,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "engines" : {
-    "node": "18.16.1",
-  },
   "author": "Ramesh Solasa",
   "license": "MIT",
   "dependencies": {
